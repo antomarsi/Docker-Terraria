@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+    world1:
+        container_name: "WorldName"
+        image: antomarsi/docker-terraria:latest
+        volumes:
+            - ./worlds/world1:/world
+            - ./server-configs/serverconfig.txt:/config/serverconfig.txt
+        ports:
+            - 7777:7777
+    world2:
+        container_name: "WorldName2"
+        image: antomarsi/docker-terraria:latest
+        volumes:
+            - ./worlds/world2:/world
+            - ./server-configs/serverconfig.txt:/config/serverconfig.txt
+        ports:
+            - 7778:7777

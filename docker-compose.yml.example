@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+    world1:
+        container_name: "World-Name"
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        volumes:
+            - world1:/world
+            - serverconfig.txt:/config/serverconfig.txt
+        ports:
+            - 7777:7777
+    world2:
+        container_name: "World-Name-2"
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        volumes:
+            - world2:/world
+            - serverconfig2.txt:/config/serverconfig.txt
+        ports:
+            - 7778:7777
